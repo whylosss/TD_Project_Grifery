@@ -5,17 +5,44 @@ using UnityEngine;
 public class Turret1 : AbstractTurret
 {
     [SerializeField] private GameObject _bullet;
+
     [SerializeField] private Transform _spawnPosition;
+    [SerializeField] private float CountDown = 0f;
+    [SerializeField] private float Range = 40;
+    [SerializeField] private float FireRate = 1f;
+
+    [SerializeField] private int Value = 15;
+
+    [SerializeField] private string EnemyTag = "Enemy";
+
+    private List<GameObject> _bulletsPool = new List<GameObject>();
+    private int _bulletsAmount = 20;
+
+    public static Turret1 Instance;
     private void Awake()
     {
+        _range = Range;
+        _enemyTag = EnemyTag;
+        _fireRate = FireRate;
+        _countDown = CountDown;
+        _value = Value;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
-        _range = 40f;
-        _enemyTag = "Enemy";
-        _fireRate = 1f;
-        _countDown = 0f;
-        _value = 15;
+        if (Instance == null)
+            Instance = this;
     }
+
+    private void Start()
+    {
+        for (int i = 0; i < _bulletsAmount; i++)
+        {
+            GameObject obj = Instantiate(_bullet);
+            obj.SetActive(false);
+            _bulletsPool.Add(obj);
+        }
+    }
+
     private void Update()
     {
         if (_target == null)
@@ -33,6 +60,18 @@ public class Turret1 : AbstractTurret
         }
 
         _countDown -= Time.deltaTime;
+    }
+
+    public GameObject GetPooledObject()
+    {
+        for(int i = 0; i < _bulletsPool.Count; i++)
+        {
+            if (!_bulletsPool[i].activeInHierarchy)
+            {
+                return _bulletsPool[i];
+            }
+        }
+        return null;
     }
 
     public override void UpdateTarget()
@@ -61,7 +100,13 @@ public class Turret1 : AbstractTurret
 
     public override void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(_bullet, _spawnPosition.position, Quaternion.Euler(90f, 0f, 0f));
+        GameObject bulletGO = Turret1.Instance.GetPooledObject();
+        if (bulletGO != null)
+        {
+            _bullet.transform.position = _spawnPosition.position;
+            _bullet.SetActive(true);   
+        }
+
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if (bullet != null)
@@ -70,7 +115,7 @@ public class Turret1 : AbstractTurret
         }
     }
 
-    public override void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _range);

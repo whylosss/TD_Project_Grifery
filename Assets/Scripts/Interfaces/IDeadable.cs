@@ -1,6 +1,6 @@
 
 public interface IDeadable 
 {
-    void GetDmage(int amount);
+    void GetDamage(int amount);
     void Dead();
 }
