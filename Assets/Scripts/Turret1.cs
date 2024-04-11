@@ -117,7 +117,6 @@ public class Turret1 : AbstractTurret
 
     protected override void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _range);
+        base.OnDrawGizmosSelected();
     }
 }

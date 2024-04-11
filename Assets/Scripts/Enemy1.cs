@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Enemy1 : AbstractEnemy
 {
+    [SerializeField] private int _health = 5;
+    private void Awake()
+    {
+        _hp = _health;
+    }
+
     public override void Dead()
     {
         
