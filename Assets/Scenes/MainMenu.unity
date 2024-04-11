@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 114915854}
   - component: {fileID: 114915853}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TextQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Quit
 --- !u!222 &114915854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 130000760}
   - component: {fileID: 130000759}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TextSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Settings
 --- !u!222 &130000760
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 2040226767}
   - component: {fileID: 2040226766}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TextPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
