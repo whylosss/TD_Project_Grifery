@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Enemy3 : AbstractEnemy
+public class Enemy1_life : AbstractEnemy
 {
-    [SerializeField] private float _health = 15;
+    [SerializeField] private float _health = 5f;
+    [SerializeField] private int _killCost = 5;
     private void Awake()
     {
+        _getMoneyForKill = _killCost;
         _hp = _health;
         _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
     }
 
-    public override void Dead() 
+    public override void Dead()
     {
         _animator.SetBool("dead", true);
         Destroy(_collider);
@@ -20,7 +22,7 @@ public class Enemy3 : AbstractEnemy
     public override void GetDamage(float amount)
     {
         _hp -= amount;
-        if (_hp <= 0)
+        if (_hp <= 0 )
         {
             Dead();
         }
@@ -28,6 +30,6 @@ public class Enemy3 : AbstractEnemy
 
     private void OnDestroy()
     {
-        giveMoney?.Invoke(10);
+        giveMoney?.Invoke(5);
     }
 }

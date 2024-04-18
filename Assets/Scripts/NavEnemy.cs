@@ -1,22 +1,19 @@
 using UnityEngine;
 using UnityEngine.AI;
-//[RequireComponent(typeof(Animator))] 
+[RequireComponent(typeof(Animator))]
 public class NavEnemy : MonoBehaviour
 {
-    //    private Animator _animator;
+    private Animator _animator;
     private float _range = 1f;
     private NavMeshAgent _agent;
-    private float _stopDistance = 0.1f;
-    [SerializeField] private int _index = 0;
     [SerializeField] private LayerMask _enemyLayer;
-    [SerializeField] private Transform[] _points;
+    [SerializeField] private Transform _point;
     [SerializeField] private bool canMove = true;
 
     private void Awake()
     {
-        //_animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
-        _agent.SetDestination(_points[_index].position);
     }
 
     private void Update()
@@ -36,32 +33,23 @@ public class NavEnemy : MonoBehaviour
             {
                 if (getDamage != null)
                 {
-                    //_animator.SetBool("Destroy", true);
+                    _animator.SetInteger("destroy", 1);
                     canMove = false;
                 }
             }
 
             else
             {
-                //_animator.SetBool("Destroy", false);
+                _animator.SetInteger("destroy", 0);
                 canMove = true;
             }
-                
+
         }
     }
 
     private void Move()
     {
-        _agent.SetDestination(_points[_index].position);
-        if (_agent.remainingDistance <= _stopDistance)
-        {
-            _index++;
-        }
-
-        if(_index >= _points.Length)
-        {
-            Destroy(gameObject);
-        }
+        _agent.SetDestination(_point.position);
     }
 
 }

@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class Enemy2 : AbstractEnemy
+public class Enemy2_life : AbstractEnemy
 {
-    [SerializeField] private float _health = 10;
+    [SerializeField] private int _costKill = 10;
+    [SerializeField] private float _health = 10f;
     private void Awake()
     {
+        _getMoneyForKill = _costKill;
         _hp = _health;
         _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
@@ -28,6 +30,6 @@ public class Enemy2 : AbstractEnemy
 
     private void OnDestroy()
     {
-        giveMoney?.Invoke(10);
+        giveMoney?.Invoke(_getMoneyForKill);
     }
 }
