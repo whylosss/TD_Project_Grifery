@@ -11,9 +11,12 @@ public class GameUI : MonoBehaviour
 
     public void Pause()
     {
-        gamePanel.SetActive(false);
-        pausePanel.SetActive(true);
-        Time.timeScale = 0f;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePanel.SetActive(false);
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     public void BackToGame()
