@@ -7,6 +7,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IDeadable
     protected Animator _animator;
     protected Collider _collider;
 
+    protected int _getMoneyForKill;
     protected float _hp;
     protected bool canRotate = true;
     public abstract void Dead();
