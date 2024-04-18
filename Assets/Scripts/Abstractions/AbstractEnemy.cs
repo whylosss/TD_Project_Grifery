@@ -3,9 +3,11 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour, IDeadable
 {
-    public static Action<int> giveMoney;
+    public static Action <int> giveMoney;
+    protected Animator _animator;
+    protected Collider _collider;
 
-    protected int _hp;
+    protected float _hp;
     protected bool canRotate = true;
     public abstract void Dead();
     public abstract void GetDamage(float amount);
