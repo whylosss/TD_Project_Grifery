@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Enemy1 : AbstractEnemy
 {
-    [SerializeField] private int _health = 5;
-    private Animator _animator;
-    private Collider _collider;
+    [SerializeField] private float _health = 5;
     private void Awake()
     {
         _hp = _health;
@@ -14,11 +12,22 @@ public class Enemy1 : AbstractEnemy
 
     public override void Dead()
     {
-        
+        _animator.SetBool("dead", true);
+        Destroy(_collider);
+        Destroy(gameObject, 2f);
     }
 
     public override void GetDamage(float amount)
     {
-        
+        _hp -= amount;
+        if (_hp <= 0 )
+        {
+            Dead();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        giveMoney?.Invoke(5);
     }
 }
