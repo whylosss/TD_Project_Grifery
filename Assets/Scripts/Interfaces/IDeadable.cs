@@ -1,5 +1,5 @@
 public interface IDeadable 
 { 
-    public void GetDamage(int amount);
+    public void GetDamage(float amount);
     public void Dead();
 }

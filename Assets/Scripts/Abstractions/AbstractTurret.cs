@@ -8,7 +8,7 @@ public abstract class AbstractTurret : MonoBehaviour, IShootable
     protected float _fireRate;
     protected float _countDown;
 
-    protected int _value;
+    public int _value;
 
     protected string _enemyTag;
 
