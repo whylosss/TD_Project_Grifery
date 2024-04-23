@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour, IDeadable
 {
-    private float _hp = 5;
+    [SerializeField] private float _hp = 5f;
 
     public void Dead()
     {
@@ -12,5 +12,10 @@ public class Obstacle : MonoBehaviour, IDeadable
     public void GetDamage(float amount)
     {
         _hp -= amount;
+        if (_hp <= 0f)
+        {
+            _hp = 0f;
+            Dead();
+        }
     }
 }
