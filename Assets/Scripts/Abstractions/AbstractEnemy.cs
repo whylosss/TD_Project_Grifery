@@ -1,16 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
-public abstract class AbstractEnemy : MonoBehaviour, IDeadable
+public abstract class AbstractEnemy : MonoBehaviour, IMovable
 {
-    public static Action <int> giveMoney;
     protected Animator _animator;
-    protected Collider _collider;
+    protected NavMeshAgent _agent;
 
-    protected int _getMoneyForKill;
-    protected float _hp;
-    protected bool canRotate = true;
-    public abstract void Dead();
-    public abstract void GetDamage(float amount);
+    protected int _damage;
+    protected float _range;
+
+    protected Transform _point;
+    protected bool _canMove = true;
+
+    protected RaycastHit _hit;
+
+    public abstract void Move();
+    public abstract void SendAttack();
+   
 }
     

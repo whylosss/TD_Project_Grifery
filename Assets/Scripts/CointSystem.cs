@@ -8,7 +8,7 @@ public class CointSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        AbstractEnemy.giveMoney += getCoints;
+        Enemy_life.giveMoney += getCoints;
     }
 
     private void getCoints(int amount)
@@ -19,6 +19,6 @@ public class CointSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        AbstractEnemy.giveMoney -= getCoints;
+        Enemy_life.giveMoney -= getCoints;
     }
 }
