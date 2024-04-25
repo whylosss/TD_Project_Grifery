@@ -4,18 +4,17 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavEnemy3 : AbstractEnemy
 {
-    [SerializeField] private Transform point;
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 1f;
 
 
     private void Awake()
     {
-        _point = point;
         _damage = damage;
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        _point = GameObject.FindGameObjectWithTag("Point");
     }
 
     private void OnEnable()
@@ -57,7 +56,7 @@ public class NavEnemy3 : AbstractEnemy
 
     public override void Move()
     {
-        _agent.SetDestination(_point.position);
+        _agent.SetDestination(_point.transform.position);
     }
 
 
