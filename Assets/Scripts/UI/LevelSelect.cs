@@ -40,4 +40,9 @@ public class LevelSelect : MonoBehaviour
         panelLevel3.SetActive(false);
     }
 
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
 }
