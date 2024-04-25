@@ -8,10 +8,12 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject turrelPanel;
 
     public void Pause()
     {
         gamePanel.SetActive(false);
+        turrelPanel.SetActive(false);
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -19,6 +21,7 @@ public class GameUI : MonoBehaviour
     public void BackToGame()
     {
         gamePanel.SetActive(true);
+        turrelPanel.SetActive(true);
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
     }
