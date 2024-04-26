@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Turret1 : AbstractTurret
 {
+    [SerializeField] private float HP = 5f;
+
     [SerializeField] private GameObject _bullet;
 
     [SerializeField] private Transform _spawnPosition;
@@ -15,6 +17,7 @@ public class Turret1 : AbstractTurret
 
     private void Awake()
     {
+        _health = HP;
         _range = Range;
         _enemyTag = EnemyTag;
         _fireRate = FireRate;
@@ -79,8 +82,24 @@ public class Turret1 : AbstractTurret
 
     }
 
+    public override void GetDamage(float amount)
+    {
+        _health -= amount;
+        if(_health <= amount)
+        {
+            Dead();
+        }
+    }
+
+    public override void Dead()
+    {
+       Destroy(gameObject);
+    }
+
     protected override void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected();
     }
+
+  
 }

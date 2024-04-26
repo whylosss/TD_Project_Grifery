@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
+
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavEnemy2 : AbstractEnemy
@@ -7,6 +9,7 @@ public class NavEnemy2 : AbstractEnemy
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 1f;
 
+    private Transform _target;
 
     private void Awake()
     {
@@ -15,6 +18,7 @@ public class NavEnemy2 : AbstractEnemy
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         _point = GameObject.FindGameObjectWithTag("Point");
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     private void OnEnable()
@@ -42,10 +46,9 @@ public class NavEnemy2 : AbstractEnemy
 
         if (Physics.Raycast(ray, out _hit, _range))
         {
-            Debug.Log("Text");
             if (_hit.collider.TryGetComponent(out IDeadable getDamage))
             {
-                if (getDamage != null)
+                if (getDamage != null )
                 {
                     _animator.SetInteger("destroy", 1);
                     _canMove = false;
@@ -54,20 +57,45 @@ public class NavEnemy2 : AbstractEnemy
         }
     }
 
+    private void UpdateTarget()
+    {
+        GameObject[] turretsArray = GameObject.FindGameObjectsWithTag("Turret");
+        float shortestDistance = Mathf.Infinity;
+        GameObject nearestTurret = null;
+        foreach (GameObject turret in turretsArray)
+        {
+            float distanceToTurret = Vector3.Distance(transform.position, turret.transform.position);
+            if (distanceToTurret < shortestDistance)
+            {
+                shortestDistance = distanceToTurret;
+                nearestTurret = turret;
+            }
+        }
+        if (nearestTurret != null && shortestDistance <= 1000f)
+        {
+            _target = nearestTurret.transform;
+        }
+        else
+        {
+            _target = null;
+        }
+
+    }
+
     public override void Move()
     {
-        _agent.SetDestination(_point.transform.position);
+        _agent.SetDestination(_target.transform.position);
     }
 
 
     public override void SendAttack()
     {
-        if (_hit.collider.TryGetComponent(out IDeadable sendDamage))
+        if (_hit.collider.TryGetComponent(out IDeadable getDamage))
         {
-            if (sendDamage != null)
+            if (getDamage != null)
             {
-                sendDamage.GetDamage(damage);
-                Debug.Log("Дамаг пройшов");
+                getDamage.GetDamage(_damage);
+                Debug.Log("Дамаг по вежі пройшов");
             }
         }
         _canMove = true;
