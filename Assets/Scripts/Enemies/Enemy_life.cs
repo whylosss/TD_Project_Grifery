@@ -14,19 +14,15 @@ public class Enemy_life : MonoBehaviour, IDeadable
         _animator.SetBool("dead", true);
         Destroy(_collider);
         Destroy(gameObject, 2f);
+        giveMoney?.Invoke(_killCost);
     }
 
     public void GetDamage(float amount)
     {
         _health -= amount;
-        if (_health <= 0 )
+        if (_health <= 0f )
         {
             Dead();
         }
-    }
-
-    private void OnDestroy()
-    {
-        giveMoney?.Invoke(_killCost);
     }
 }

@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 public class BuildTower : MonoBehaviour
 {
     private CointSystem cointSystem;
@@ -44,7 +42,7 @@ public class BuildTower : MonoBehaviour
 
     private void getIBuild(int index)
     {
-        int sell = towers[index].GetComponentInChildren<Turret1>()._value;
+        int sell = towers[index].GetComponentInChildren<Turret>()._value;
         if (cointSystem._coints >= sell && canBuild == true)
         {
             cointSystem._coints -= sell;

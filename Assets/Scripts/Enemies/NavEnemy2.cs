@@ -19,6 +19,7 @@ public class NavEnemy2 : AbstractEnemy
         _agent = GetComponent<NavMeshAgent>();
         _point = GameObject.FindGameObjectWithTag("Point");
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        //_animator.applyRootMotion = false;
     }
 
     private void OnEnable()
@@ -34,7 +35,7 @@ public class NavEnemy2 : AbstractEnemy
     private void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward * 3f, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
 
         if (_canMove == true)
         {
@@ -55,6 +56,10 @@ public class NavEnemy2 : AbstractEnemy
                 }
             }
         }
+
+        //if (_agent.remainingDistance <= 0.5f)
+        //    _canMove = false;
+
     }
 
     private void UpdateTarget()
@@ -77,7 +82,7 @@ public class NavEnemy2 : AbstractEnemy
         }
         else
         {
-            _target = null;
+            _target = _point.transform;
         }
 
     }
