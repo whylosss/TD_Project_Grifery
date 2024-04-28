@@ -1,26 +1,24 @@
 using UnityEngine;
 
-public class Turret1 : AbstractTurret
+public class Turret : MonoBehaviour , IShootable, IDeadable
 {
+    private const string _enemyTag = "Enemy";
+
+    [SerializeField] private float _health = 5f;
+
     [SerializeField] private GameObject _bullet;
 
     [SerializeField] private Transform _spawnPosition;
-    [SerializeField] private float CountDown = 0f;
-    [SerializeField] private float Range = 40;
-    [SerializeField] private float FireRate = 1f;
+    [SerializeField] private float _countDown = 0f;
+    [SerializeField] private float _range = 40;
+    [SerializeField] private float _fireRate = 1f;
 
-    [SerializeField] private int Value = 15;
+    private Transform _target;
 
-    [SerializeField] private string EnemyTag = "Enemy";
+    public int _value = 15;
 
     private void Awake()
     {
-        _range = Range;
-        _enemyTag = EnemyTag;
-        _fireRate = FireRate;
-        _countDown = CountDown;
-        _value = Value;
-
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -43,9 +41,9 @@ public class Turret1 : AbstractTurret
         _countDown -= Time.deltaTime;
     }
 
-    public override void Shoot()
+    public void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(_bullet, _spawnPosition.position, Quaternion.Euler(90f, 0f, 0f));
+        GameObject bulletGO = Instantiate(_bullet, _spawnPosition.position, Quaternion.Euler(90f, 0f, 0f));
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if (bullet != null)
@@ -54,7 +52,7 @@ public class Turret1 : AbstractTurret
         }
     }
 
-    public override void UpdateTarget()
+    public void UpdateTarget()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag(_enemyTag);
         float shortestDistance = Mathf.Infinity;
@@ -79,8 +77,23 @@ public class Turret1 : AbstractTurret
 
     }
 
-    protected override void OnDrawGizmosSelected()
+    public void GetDamage(float amount)
     {
-        base.OnDrawGizmosSelected();
+        _health -= amount;
+        if(_health <= amount)
+        {
+            Dead();
+        }
+    }
+
+    public void Dead()
+    {
+       Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _range);
     }
 }
