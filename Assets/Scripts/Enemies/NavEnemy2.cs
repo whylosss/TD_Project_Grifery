@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -11,7 +10,7 @@ public class NavEnemy2 : AbstractEnemy
 
     private Transform _target;
 
-    private void Awake()
+    public void Start()
     {
         _damage = damage;
         _range = range;
@@ -84,7 +83,6 @@ public class NavEnemy2 : AbstractEnemy
         {
             _target = _point.transform;
         }
-
     }
 
     public override void Move()

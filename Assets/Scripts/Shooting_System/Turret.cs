@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class Turret : MonoBehaviour , IShootable, IDeadable
+public class Turret : MonoBehaviour , IShootable
 {
     private const string _enemyTag = "Enemy";
-
-    [SerializeField] private float _health = 5f;
 
     [SerializeField] private GameObject _bullet;
 
@@ -75,20 +73,6 @@ public class Turret : MonoBehaviour , IShootable, IDeadable
             _target = null;
         }
 
-    }
-
-    public void GetDamage(float amount)
-    {
-        _health -= amount;
-        if(_health <= amount)
-        {
-            Dead();
-        }
-    }
-
-    public void Dead()
-    {
-       Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

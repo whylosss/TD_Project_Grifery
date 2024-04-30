@@ -7,8 +7,7 @@ public class NavEnemy1 : AbstractEnemy
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 1f;
 
-
-    private void Awake()
+    public void Start()
     { 
         _damage = damage;
         _range = range;
@@ -17,15 +16,9 @@ public class NavEnemy1 : AbstractEnemy
         _point = GameObject.FindGameObjectWithTag("Point");
     }
 
-    private void OnEnable()
-    {
-        AnimEvent.checkRay += SendAttack;
-    }
+    private void OnEnable() => AnimEvent.checkRay += SendAttack;
 
-    private void OnDisable()
-    {
-        AnimEvent.checkRay -= SendAttack;
-    }
+    private void OnDisable() => AnimEvent.checkRay -= SendAttack;
 
     private void Update()
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,18 +33,9 @@ public class MainMenuUI : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetLowSettings()
-    {
-        QualitySettings.SetQualityLevel(0, true);
-    }
+    public void SetLowSettings() => QualitySettings.SetQualityLevel(0, true);
 
-    public void SetMediumSettings()
-    {
-        QualitySettings.SetQualityLevel(2, true);
-    }
+    public void SetMediumSettings() => QualitySettings.SetQualityLevel(2, true);
 
-    public void SetHighSettings()
-    {
-        QualitySettings.SetQualityLevel(5, true);
-    }
+    public void SetHighSettings() => QualitySettings.SetQualityLevel(5, true);
 }

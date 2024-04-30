@@ -848,14 +848,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaeccbb2644541e41943ec82cf9455fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0
-  HP: 5
   _bullet: {fileID: 1281928636257851069, guid: 096c5d693975d6149acc30e8e3f72188, type: 3}
   _spawnPosition: {fileID: 6399760654828422799}
-  CountDown: 0
-  Range: 40
-  FireRate: 1
-  Value: 15
+  _countDown: 0
+  _range: 40
+  _fireRate: 1
+  _value: 0
 --- !u!1 &5393123914739454087
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +948,7 @@ GameObject:
   - component: {fileID: 2710477834694514674}
   m_Layer: 0
   m_Name: GatelingGun_Yellow_L3
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
