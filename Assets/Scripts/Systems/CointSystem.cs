@@ -8,17 +8,25 @@ public class CointSystem : MonoBehaviour, IServiceLocator
 
     public void Init()
     {
+        UpdateCoints();
         Enemy_life.giveMoney += getCoints;
+        BuildTower.onSpent += UpdateCoints;
+    }
+
+    private void UpdateCoints()
+    {
+        _cointText.text = _coints.ToString();
     }
 
     private void getCoints(int amount)
     {
         _coints += amount;
-        _cointText.text = _coints.ToString();
+        UpdateCoints();
     }
 
     private void OnDisable()
     {
+        BuildTower.onSpent -= UpdateCoints;
         Enemy_life.giveMoney -= getCoints;
     }
 }

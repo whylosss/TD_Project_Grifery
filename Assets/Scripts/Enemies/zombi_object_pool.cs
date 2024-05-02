@@ -7,7 +7,7 @@ public class zombi_object_pool : MonoBehaviour, IServiceLocator
     public static zombi_object_pool Instance;
 
     private List<GameObject> pooledZombies = new List<GameObject>();
-    private int _objectsToSpawn = 50;
+    private int _objectsToSpawn = 33;
 
     [SerializeField] private GameObject[] _zombiPrefs;
 
@@ -38,6 +38,13 @@ public class zombi_object_pool : MonoBehaviour, IServiceLocator
             GameObject obj2 = Instantiate(_zombiPrefs[1]);
             obj2.SetActive(false);
             pooledZombies.Add(obj2);
+        }
+
+        for (int i = 0; i < _objectsToSpawn; i++)
+        {
+            GameObject obj3 = Instantiate(_zombiPrefs[2]);
+            obj3.SetActive(false);
+            pooledZombies.Add(obj3);
         }
     }
 

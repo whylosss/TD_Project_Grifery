@@ -9,8 +9,9 @@ public class NavEnemy2 : AbstractEnemy
     [SerializeField] private float range = 1f;
 
     private Transform _target;
+    private bool _canDestroy;
 
-    public void Start()
+    private void Start()
     {
         _damage = damage;
         _range = range;
@@ -33,32 +34,31 @@ public class NavEnemy2 : AbstractEnemy
 
     private void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
+            Ray ray = new Ray(transform.position, transform.forward);
+            Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
 
-        if (_canMove == true)
-        {
-            Move();
-        }
-
-        else
-            return;
-
-        if (Physics.Raycast(ray, out _hit, _range))
-        {
-            if (_hit.collider.TryGetComponent(out IDeadable getDamage))
+            if (_canMove == true)
             {
-                if (getDamage != null )
+                Move();
+            }
+
+            else
+                return;
+
+        if (_canDestroy == true)
+        {
+            if (Physics.Raycast(ray, out _hit, _range))
+            {
+                if (_hit.collider.TryGetComponent(out IDeadable getDamage))
                 {
-                    _animator.SetInteger("destroy", 1);
-                    _canMove = false;
+                    if (getDamage != null)
+                    {
+                        _animator.SetInteger("destroy", 1);
+                        _canMove = false;
+                    }
                 }
             }
         }
-
-        //if (_agent.remainingDistance <= 0.5f)
-        //    _canMove = false;
-
     }
 
     private void UpdateTarget()
@@ -75,13 +75,15 @@ public class NavEnemy2 : AbstractEnemy
                 nearestTurret = turret;
             }
         }
-        if (nearestTurret != null && shortestDistance <= 1000f)
+        if (nearestTurret != null && shortestDistance <= 50f)
         {
             _target = nearestTurret.transform;
+            _canDestroy = true;
         }
         else
         {
             _target = _point.transform;
+            _canDestroy = false;
         }
     }
 
@@ -93,6 +95,7 @@ public class NavEnemy2 : AbstractEnemy
 
     public override void SendAttack()
     {
+
         if (_hit.collider.TryGetComponent(out IDeadable getDamage))
         {
             if (getDamage != null)
@@ -104,4 +107,5 @@ public class NavEnemy2 : AbstractEnemy
         _canMove = true;
         _animator.SetInteger("destroy", 0);
     }
+    
 }
