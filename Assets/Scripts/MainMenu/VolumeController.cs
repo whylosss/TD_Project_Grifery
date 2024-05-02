@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VolumeController : MonoBehaviour
-{
+[RequireComponent(typeof(AudioSource))]
 
+public class VolumeController : MonoBehaviour, IServiceLocator
+{
     public Slider volumeSlider;
     private AudioSource audioSource;
 
-    private void Start()
+    public void Init()
     {
         audioSource = GetComponent<AudioSource>();
         volumeSlider.value = audioSource.volume;

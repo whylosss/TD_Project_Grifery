@@ -9,6 +9,13 @@ public class Enemy_life : MonoBehaviour, IDeadable
     private Animator _animator;
     [SerializeField] private float _health = 5f;
     [SerializeField] private int _killCost = 5;
+
+    private void Start()
+    {
+        _collider = GetComponent<Collider>();
+        _animator = GetComponent<Animator>();
+    }
+
     public void Dead()
     {
         _animator.SetBool("dead", true);
