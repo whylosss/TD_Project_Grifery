@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -9,7 +11,7 @@ public class NavEnemy2 : AbstractEnemy
     [SerializeField] private float range = 1f;
 
     private Transform _target;
-    private bool _canDestroy;
+    private bool _canDestroy = false;
 
     private void Start()
     {
@@ -17,9 +19,11 @@ public class NavEnemy2 : AbstractEnemy
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = GameObject.FindGameObjectWithTag("Point");
+        _point = GameObject.FindGameObjectsWithTag("Point");
+        _point = _point.OrderBy(go => go.name).ToArray();
+        _target = _point[_index].transform;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        //_animator.applyRootMotion = false;
     }
 
     private void OnEnable()
@@ -34,7 +38,7 @@ public class NavEnemy2 : AbstractEnemy
 
     private void Update()
     {
-            Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position, transform.forward);
             Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
 
             if (_canMove == true)
@@ -45,17 +49,14 @@ public class NavEnemy2 : AbstractEnemy
             else
                 return;
 
-        if (_canDestroy == true)
+        if (!_canDestroy)
         {
             if (Physics.Raycast(ray, out _hit, _range))
             {
                 if (_hit.collider.TryGetComponent(out IDeadable getDamage))
                 {
-                    if (getDamage != null)
-                    {
-                        _animator.SetInteger("destroy", 1);
-                        _canMove = false;
-                    }
+                    _animator.SetInteger("destroy", 1);
+                    _canMove = false;
                 }
             }
         }
@@ -82,20 +83,28 @@ public class NavEnemy2 : AbstractEnemy
         }
         else
         {
-            _target = _point.transform;
+            _target = _point[_index].transform;
             _canDestroy = false;
         }
     }
 
     public override void Move()
     {
+        if (_target == _point[_index].transform)
+        {
+            float _distance = Random.Range(0.01f, 3f);
+            {
+                if (_agent.remainingDistance <= _distance)
+                    _index++;
+            }
+        }
+
         _agent.SetDestination(_target.transform.position);
     }
 
 
     public override void SendAttack()
     {
-
         if (_hit.collider.TryGetComponent(out IDeadable getDamage))
         {
             if (getDamage != null)

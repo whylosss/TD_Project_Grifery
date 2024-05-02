@@ -1,5 +1,7 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavEnemy1 : AbstractEnemy
@@ -13,7 +15,8 @@ public class NavEnemy1 : AbstractEnemy
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = GameObject.FindGameObjectWithTag("Point");
+        _point = GameObject.FindGameObjectsWithTag("Point");
+        _point = _point.OrderBy(go => go.name).ToArray();
     }
 
     private void Update()
@@ -23,7 +26,14 @@ public class NavEnemy1 : AbstractEnemy
 
     public override void Move()
     {
-        _agent.SetDestination(_point.transform.position);
+        float _distance = Random.Range(0.01f, 3f);
+        if (_agent.remainingDistance <= _distance)
+            _index++;
+
+        _agent.SetDestination(_point[_index].transform.position);
+
+        if (_index == _point.Length - 1)
+            Debug.Log("Finish");
     }
 
 
