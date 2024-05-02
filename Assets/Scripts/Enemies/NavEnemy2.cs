@@ -15,6 +15,7 @@ public class NavEnemy2 : AbstractEnemy
 
     private void Start()
     {
+        _index = 0;
         _damage = damage;
         _range = range;
         _animator = GetComponent<Animator>();

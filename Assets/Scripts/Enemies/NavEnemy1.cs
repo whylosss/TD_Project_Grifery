@@ -11,12 +11,14 @@ public class NavEnemy1 : AbstractEnemy
 
     private void Start()
     {
+        _index = 0;
         _damage = damage;
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         _point = GameObject.FindGameObjectsWithTag("Point");
         _point = _point.OrderBy(go => go.name).ToArray();
+
     }
 
     private void Update()
