@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BuildTower : MonoBehaviour, IServiceLocator
 {
-    public static Action onSpent;
-
     [SerializeField] private Color howerColor = Color.gray;
     [SerializeField] private GameObject[] towers;
 
@@ -51,11 +49,10 @@ public class BuildTower : MonoBehaviour, IServiceLocator
     private void getIBuild(int index)
     {
         int sell = towers[index].GetComponentInChildren<Turret>()._value;
-        if (_cointSystem._coints >= sell && canBuild == true)
+        if (_cointSystem.Coins >= sell && canBuild == true)
         {
             towers[index].SetActive(true);
-            _cointSystem._coints -= sell;
-            onSpent?.Invoke();
+            _cointSystem.Coins -= sell;
         }
     }
 

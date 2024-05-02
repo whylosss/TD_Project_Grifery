@@ -1,32 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CointSystem : MonoBehaviour, IServiceLocator
 {
     [SerializeField] private Text _cointText;
-    public int _coints;
+    public int Coins = 30;
 
     public void Init()
     {
-        UpdateCoints();
+        StartCoroutine(cointUpdate());
         Enemy_life.giveMoney += getCoints;
-        BuildTower.onSpent += UpdateCoints;
-    }
-
-    private void UpdateCoints()
-    {
-        _cointText.text = _coints.ToString();
+        _cointText.text = Coins.ToString();
     }
 
     private void getCoints(int amount)
     {
-        _coints += amount;
-        UpdateCoints();
+        Coins += amount;
     }
 
-    private void OnDisable()
+    private IEnumerator cointUpdate()
     {
-        BuildTower.onSpent -= UpdateCoints;
-        Enemy_life.giveMoney -= getCoints;
+        yield return new WaitForSeconds(1f);
+        Coins++;
+        _cointText.text = Coins.ToString();
+        StartCoroutine(cointUpdate());
     }
 }
