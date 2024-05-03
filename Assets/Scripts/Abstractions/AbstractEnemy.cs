@@ -10,9 +10,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IMovable
     protected float _range;
     protected int _index = 0;
 
-    protected GameObject[] _point;
-
     protected bool _canMove = true;
+
+    protected GameObject[] _point;
 
     protected RaycastHit _hit;
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
-using Unity.VisualScripting;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -40,15 +39,15 @@ public class NavEnemy2 : AbstractEnemy
     private void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-            Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
 
-            if (_canMove == true)
-            {
-                Move();
-            }
+        if (_canMove == true)
+        {
+            Move();
+        }
 
-            else
-                return;
+        else
+            return;
 
         if (!_canDestroy)
         {
@@ -117,5 +116,5 @@ public class NavEnemy2 : AbstractEnemy
         _canMove = true;
         _animator.SetInteger("destroy", 0);
     }
-    
+
 }
