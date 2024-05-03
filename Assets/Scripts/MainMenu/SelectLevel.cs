@@ -13,11 +13,11 @@ public class SelectLevel : MonoBehaviour
 
     public void LoadLevel2()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level_2");
     }
 
     public void LoadLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level_3");
     }
 }

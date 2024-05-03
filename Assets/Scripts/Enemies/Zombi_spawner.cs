@@ -8,6 +8,7 @@ public class Zombi_spawner : MonoBehaviour, IServiceLocator
     [SerializeField] private int _spawnAmount;
     [SerializeField] private float _spawnInterval = 2.0f;
     [SerializeField] private float _intervalBeetweenWaves = 10.0f;
+    [SerializeField] private float _angle;
     public void Init()
     { 
         _spawnAmount = _startSpawnAmount;
@@ -23,7 +24,7 @@ public class Zombi_spawner : MonoBehaviour, IServiceLocator
             if(zombi != null)
             {
                 zombi.transform.position = _spawPosition.position;
-                zombi.transform.rotation = Quaternion.Euler(0, 180, 0);
+                zombi.transform.rotation = Quaternion.Euler(0, _angle, 0);
                 zombi.SetActive(true);
                 _spawnAmount--;
             }
