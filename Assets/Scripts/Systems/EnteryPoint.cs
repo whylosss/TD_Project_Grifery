@@ -7,6 +7,7 @@ public class EnteryPoint : MonoBehaviour
     [SerializeField] private zombi_object_pool _zombi_object_pool;
     [SerializeField] private Zombi_spawner _zombi_spawner;
     [SerializeField] private CointSystem _cointSystem;
+    [SerializeField] private TimeController _timeController;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class EnteryPoint : MonoBehaviour
         _zombi_object_pool.Init2();
         _zombi_spawner.Init();
         _cointSystem.Init();
+        _timeController.Init();
         Debug.Log("Initializated");
     }
 
