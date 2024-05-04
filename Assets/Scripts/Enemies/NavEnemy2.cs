@@ -60,6 +60,12 @@ public class NavEnemy2 : AbstractEnemy
                 }
             }
         }
+
+        if (_index == 8)
+        {
+            TakeTowerHp?.Invoke(1);
+            Destroy(gameObject);
+        }
     }
 
     private void UpdateTarget()
@@ -116,5 +122,4 @@ public class NavEnemy2 : AbstractEnemy
         _canMove = true;
         _animator.SetInteger("destroy", 0);
     }
-
 }

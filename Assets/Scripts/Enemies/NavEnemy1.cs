@@ -1,6 +1,6 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -11,7 +11,6 @@ public class NavEnemy1 : AbstractEnemy
 
     private void Start()
     {
-        _index = 0;
         _damage = damage;
         _range = range;
         _animator = GetComponent<Animator>();
@@ -24,18 +23,23 @@ public class NavEnemy1 : AbstractEnemy
     private void Update()
     {
         Move();
+
+        if (_index == 8)
+        {
+            TakeTowerHp?.Invoke(1);
+            Destroy(gameObject);
+        }
+            
     }
 
     public override void Move()
     {
         float _distance = Random.Range(0.01f, 3f);
+
         if (_agent.remainingDistance <= _distance)
             _index++;
 
         _agent.SetDestination(_point[_index].transform.position);
-
-        if (_index == _point.Length - 1)
-            Debug.Log("Finish");
     }
 
 
