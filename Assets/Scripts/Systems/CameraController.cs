@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private Camera _camera;
+    [SerializeField] private float _sensitivaty = 300f;
+
     [SerializeField] private float _movementRange = 150f;
     [SerializeField] private float _normalSpeed = 20f;
     [SerializeField] private float _maxSpeed = 50f;
+
     private float _speed;
+    private float rotationX = 0f;
 
     void Update()
     {
