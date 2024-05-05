@@ -41,10 +41,12 @@ public class NavEnemy2 : AbstractEnemy
 
     private void Update()
     {
+        Move();
+
+        _animator.SetInteger("destroy", 0);
+
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
-
-        Move();
 
         if (_canDestroy == true)
         {
@@ -56,10 +58,6 @@ public class NavEnemy2 : AbstractEnemy
                 }
             }
         }
-
-        else
-            _animator.SetInteger("destroy", 0);
-
 
         if (_index == 8 && _isAlive == true)
         {
