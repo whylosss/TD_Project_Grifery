@@ -42,7 +42,6 @@ public class BuildTower : MonoBehaviour, IServiceLocator
     private void Turret1(int index)
     {
         currentBuildIndex = index;
-        Debug.Log(index);
     }
 
     private void getIBuild(int index)

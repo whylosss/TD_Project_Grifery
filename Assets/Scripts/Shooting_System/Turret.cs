@@ -1,7 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class Turret : MonoBehaviour , IShootable
 {
+    private AudioSource _audioSource;
     private const string _enemyTag = "Enemy";
 
     [SerializeField] private GameObject _bullet;
@@ -15,8 +18,9 @@ public class Turret : MonoBehaviour , IShootable
 
     public int _value = 15;
 
-    private void Awake()
-    {
+    private void Start()
+    { 
+        _audioSource = GetComponent<AudioSource>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -41,6 +45,7 @@ public class Turret : MonoBehaviour , IShootable
 
     public void Shoot()
     {
+        _audioSource.Play();    
         GameObject bulletGO = Instantiate(_bullet, _spawnPosition.position, Quaternion.Euler(90f, 0f, 0f));
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
