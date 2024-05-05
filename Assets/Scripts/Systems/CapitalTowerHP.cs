@@ -11,6 +11,7 @@ public class CapitalTowerHP : MonoBehaviour, IDeadable
     {
         NavEnemy1.TakeTowerHp += GetDamage;
         NavEnemy2.TakeTowerHp += GetDamage;
+        _healthText.text = _health.ToString();
     }
 
     private void OnDisable()
@@ -26,7 +27,7 @@ public class CapitalTowerHP : MonoBehaviour, IDeadable
         if (_health <= 0)
             Dead();
 
-        //_healthText.text = _health.ToString();
+        _healthText.text = _health.ToString();
     }
 
     public void Dead()
