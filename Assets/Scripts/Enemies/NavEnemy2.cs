@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
+using System;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavEnemy2 : AbstractEnemy
 {
+    public static Action <float> TakeTowerHp;
+
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 1f;
 
@@ -41,24 +44,28 @@ public class NavEnemy2 : AbstractEnemy
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
 
-        if (_canMove == true)
-        {
-            Move();
-        }
+        Move();
 
-        else
-            return;
-
-        if (!_canDestroy)
+        if (_canDestroy == true)
         {
             if (Physics.Raycast(ray, out _hit, _range))
             {
-                if (_hit.collider.TryGetComponent(out IDeadable getDamage))
+                if (_hit.collider.TryGetComponent(out IDeadable getDamage) && _hit.collider.tag != "Enemy")
                 {
                     _animator.SetInteger("destroy", 1);
-                    _canMove = false;
                 }
             }
+        }
+
+        else
+            _animator.SetInteger("destroy", 0);
+
+
+        if (_index == 8 && _isAlive == true)
+        {
+            TakeTowerHp?.Invoke(1f);
+            _isAlive = false;
+            Destroy(gameObject);
         }
     }
 
@@ -92,7 +99,7 @@ public class NavEnemy2 : AbstractEnemy
     {
         if (_target == _point[_index].transform)
         {
-            float _distance = Random.Range(0.01f, 3f);
+            float _distance = UnityEngine.Random.Range(0.01f, 3f);
             {
                 if (_agent.remainingDistance <= _distance)
                     _index++;
@@ -105,16 +112,11 @@ public class NavEnemy2 : AbstractEnemy
 
     public override void SendAttack()
     {
-        if (_hit.collider.TryGetComponent(out IDeadable getDamage))
-        {
-            if (getDamage != null)
-            {
-                getDamage.GetDamage(_damage);
-                Debug.Log("Дамаг по вежі пройшов");
-            }
-        }
-        _canMove = true;
         _animator.SetInteger("destroy", 0);
-    }
 
+        if (_hit.collider.TryGetComponent(out IDeadable getDamage) && _hit.collider.tag != "Enemy")
+        {
+             getDamage.GetDamage(_damage);
+        }
+    }
 }

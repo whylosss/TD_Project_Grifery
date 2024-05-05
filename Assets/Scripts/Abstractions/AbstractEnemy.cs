@@ -8,8 +8,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IMovable
 
     protected int _damage;
     protected float _range;
-    protected int _index = 0;
+    protected int _index = -1;
 
+    protected bool _isAlive = true;
     protected bool _canMove = true;
 
     protected GameObject[] _point;

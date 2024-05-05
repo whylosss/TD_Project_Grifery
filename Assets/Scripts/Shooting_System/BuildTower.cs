@@ -33,7 +33,6 @@ public class BuildTower : MonoBehaviour, IServiceLocator
         if (canBuild == true)
         {
             getIBuild(currentBuildIndex);
-            canBuild = false;
         }
 
         else
@@ -53,6 +52,7 @@ public class BuildTower : MonoBehaviour, IServiceLocator
         {
             towers[index].SetActive(true);
             _cointSystem.Coins -= sell;
+            canBuild = false;
         }
     }
 
