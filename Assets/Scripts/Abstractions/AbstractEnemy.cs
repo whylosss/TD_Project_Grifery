@@ -1,11 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System;
 
 public abstract class AbstractEnemy : MonoBehaviour, IMovable
 {
-    public static Action<float> TakeTowerHp;
-
     protected Animator _animator;
     protected NavMeshAgent _agent;
 
@@ -13,6 +10,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IMovable
     protected float _range;
     protected int _index = -1;
 
+    protected bool _isAlive = true;
     protected bool _canMove = true;
 
     protected GameObject[] _point;

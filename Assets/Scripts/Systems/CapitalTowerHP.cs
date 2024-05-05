@@ -4,17 +4,19 @@ using UnityEngine.UI;
 
 public class CapitalTowerHP : MonoBehaviour, IDeadable
 {
-    [SerializeField] private float _health;
+    [SerializeField] private float _health = 10;
     [SerializeField] private Text _healthText;
 
     private void OnEnable()
     {
-        AbstractEnemy.TakeTowerHp += GetDamage;
+        NavEnemy1.TakeTowerHp += GetDamage;
+        NavEnemy2.TakeTowerHp += GetDamage;
     }
 
     private void OnDisable()
     {
-        
+        NavEnemy1.TakeTowerHp -= GetDamage;
+        NavEnemy2.TakeTowerHp -= GetDamage;
     }
 
     public void GetDamage(float amount)
@@ -24,7 +26,7 @@ public class CapitalTowerHP : MonoBehaviour, IDeadable
         if (_health <= 0)
             Dead();
 
-        _healthText.text = _health.ToString();
+        //_healthText.text = _health.ToString();
     }
 
     public void Dead()
