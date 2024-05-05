@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(Animator))]
 public class Enemy_life : MonoBehaviour, IDeadable
 {
@@ -9,11 +11,19 @@ public class Enemy_life : MonoBehaviour, IDeadable
     private Animator _animator;
     [SerializeField] private float _health = 5f;
     [SerializeField] private int _killCost = 5;
+    [SerializeField] private Slider _slider;
 
     private void Start()
     {
         _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
+        _slider = GetComponentInChildren<Slider>();
+        _slider.maxValue = _health;
+    }
+
+    private void Update()
+    {
+        _slider.value = _health;
     }
 
     public void Dead()
