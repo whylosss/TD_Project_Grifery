@@ -13,7 +13,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IMovable
     protected bool _isAlive = true;
     protected bool _canMove = true;
 
-    protected GameObject[] _point;
+    protected GameObject[] _points;
 
     protected RaycastHit _hit;
 

@@ -22,9 +22,9 @@ public class NavEnemy2 : AbstractEnemy
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = GameObject.FindGameObjectsWithTag("Point");
-        _point = _point.OrderBy(go => go.name).ToArray();
-        _target = _point[_index].transform;
+        _points = GameObject.FindGameObjectsWithTag("Point");
+        _points = _points.OrderBy(go => go.name).ToArray();
+        _target = _points[_index].transform;
 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -59,7 +59,7 @@ public class NavEnemy2 : AbstractEnemy
             }
         }
 
-        if (_index == 8 && _isAlive == true)
+        if (_index == _points.Length - 1 && _isAlive == true)
         {
             TakeTowerHp?.Invoke(1f);
             _isAlive = false;
@@ -88,14 +88,14 @@ public class NavEnemy2 : AbstractEnemy
         }
         else
         {
-            _target = _point[_index].transform;
+            _target = _points[_index].transform;
             _canDestroy = false;
         }
     }
 
     public override void Move()
     {
-        if (_target == _point[_index].transform)
+        if (_target == _points[_index].transform)
         {
             float _distance = UnityEngine.Random.Range(0.01f, 3f);
             {

@@ -18,8 +18,8 @@ public class NavEnemy1 : AbstractEnemy
         _range = range;
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = GameObject.FindGameObjectsWithTag("Point");
-        _point = _point.OrderBy(go => go.name).ToArray();
+        _points = GameObject.FindGameObjectsWithTag("Point");
+        _points = _points.OrderBy(go => go.name).ToArray();
 
     }
 
@@ -27,7 +27,7 @@ public class NavEnemy1 : AbstractEnemy
     {
         Move();
 
-        if (_index == 8 && _isAlive == true)
+        if (_index == _points.Length - 1 && _isAlive == true)
         {
             TakeTowerHp?.Invoke(1f);
             _isAlive = false;
@@ -43,7 +43,7 @@ public class NavEnemy1 : AbstractEnemy
         if (_agent.remainingDistance <= _distance)
             _index++;
 
-        _agent.SetDestination(_point[_index].transform.position);
+        _agent.SetDestination(_points[_index].transform.position);
     }
 
 
