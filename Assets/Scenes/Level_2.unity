@@ -1658,6 +1658,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3646836656816154605, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3729748953787918997, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1695,6 +1699,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4802077715549908339, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104059099188722571, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
@@ -2609,7 +2617,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _sensitivaty: 300
   _movementRange: 300
   _normalSpeed: 20
   _maxSpeed: 50
