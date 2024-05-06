@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4589619, g: 0.32300758, b: 0.32182458, a: 1}
+  m_IndirectSpecularColor: {r: 0.45896208, g: 0.32300743, b: 0.32182455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,6 +418,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6459828522198641959, guid: 6e96f743f299de843b51fc3057882412, type: 3}
       insertIndex: -1
       addedObject: {fileID: 884253989}
+    - targetCorrespondingSourceObject: {fileID: 6459828522198641959, guid: 6e96f743f299de843b51fc3057882412, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 784079866}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4675777349603297988, guid: 6e96f743f299de843b51fc3057882412, type: 3}
       insertIndex: -1
@@ -1470,6 +1473,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 884253989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &784079865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784079866}
+  m_Layer: 0
+  m_Name: TargetGovno
+  m_TagString: Point
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &784079866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784079865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 30523510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831875228
 GameObject:

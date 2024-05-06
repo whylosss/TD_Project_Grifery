@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4589619, g: 0.32300758, b: 0.32182458, a: 1}
+  m_IndirectSpecularColor: {r: 0.45896208, g: 0.32300743, b: 0.32182455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -665,8 +665,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579884689}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.2, y: 17.5, z: 34.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -202.5, y: 17.5, z: 45.67073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -676,7 +676,7 @@ Transform:
   - {fileID: 1873666778}
   - {fileID: 1183371092}
   - {fileID: 1749255750}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1164854604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &592563184
 PrefabInstance:
@@ -1744,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 164.3
+      value: 177.8
       objectReference: {fileID: 0}
     - target: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1815,6 +1815,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1750006972}
+    - targetCorrespondingSourceObject: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579884690}
+    - targetCorrespondingSourceObject: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1984756232}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 758207327380270116, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       insertIndex: -1
@@ -2697,7 +2703,7 @@ Transform:
   m_GameObject: {fileID: 1678081236}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 63.4, y: 31.18, z: -65.6}
+  m_LocalPosition: {x: 147.1, y: 31.18, z: -65.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2716,7 +2722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _movementRange: 300
+  _movementRange: 180
   _normalSpeed: 20
   _maxSpeed: 50
 --- !u!1 &1749255749
@@ -3235,6 +3241,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56b66cd4eec6db4fb189f338b56d4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1984756231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984756232}
+  m_Layer: 0
+  m_Name: TargetGovno
+  m_TagString: Point
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1984756232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984756231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164854604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2025333261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3402,4 +3439,3 @@ SceneRoots:
   - {fileID: 1936094762}
   - {fileID: 477486660}
   - {fileID: 1763359971}
-  - {fileID: 579884690}

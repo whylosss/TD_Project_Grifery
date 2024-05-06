@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5419795, g: 0.42409012, b: 0.38188702, a: 1}
+  m_IndirectSpecularColor: {r: 0.5419796, g: 0.4240902, b: 0.3818871, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1239,6 +1239,10 @@ PrefabInstance:
     - target: {fileID: 4163533462753069466, guid: bb03b06b2d067d04887c198441585a35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810811695467551621, guid: bb03b06b2d067d04887c198441585a35, type: 3}
+      propertyPath: m_Name
+      value: TargetGovno
       objectReference: {fileID: 0}
     - target: {fileID: 6149627540807247058, guid: bb03b06b2d067d04887c198441585a35, type: 3}
       propertyPath: m_Color.b
