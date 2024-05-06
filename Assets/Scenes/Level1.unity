@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eab53bce29a4b49b580f7b5cc3763f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   _health: 10
   _healthText: {fileID: 1273365124}
 --- !u!1 &1639526478

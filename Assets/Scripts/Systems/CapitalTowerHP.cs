@@ -12,7 +12,6 @@ public class CapitalTowerHP : MonoBehaviour, IDeadable
         _healthText.text = _health.ToString();
         NavEnemy1.TakeTowerHp += GetDamage;
         NavEnemy2.TakeTowerHp += GetDamage;
-        _healthText.text = _health.ToString();
     }
 
     private void OnDisable()
