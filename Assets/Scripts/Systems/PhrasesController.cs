@@ -31,8 +31,8 @@ public class PhrasesController : MonoBehaviour
 
     private void PlayEnemyPhrases()
     {
-            _index = Random.Range(0, _enemyPrases.Length + 1);
-            _audioSource.PlayOneShot(_enemyPrases[_index]);
+        _index = Random.Range(0, _enemyPrases.Length + 1);
+        _audioSource.PlayOneShot(_enemyPrases[_index]);
     }
 
     private void PlaySecoundsLeft()
@@ -42,6 +42,6 @@ public class PhrasesController : MonoBehaviour
 
     private void PlayTurretDestroyed()
     {
-            _audioSource.PlayOneShot(_turretDestroyed);
+        _audioSource.PlayOneShot(_turretDestroyed);
     }
 }

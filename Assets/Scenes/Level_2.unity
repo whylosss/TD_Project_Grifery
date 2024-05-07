@@ -964,6 +964,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2965964499182410662, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: _time
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965964499182410662, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
       propertyPath: _timeText
       value: 
       objectReference: {fileID: 705508183}
@@ -1825,9 +1829,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 758207327380270116, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1164854603}
-    - targetCorrespondingSourceObject: {fileID: 758207327380270116, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1164854605}
     - targetCorrespondingSourceObject: {fileID: 5104059099188722571, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1164854607}
@@ -1873,102 +1874,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7748227158818856736, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
   m_PrefabInstance: {fileID: 1164854601}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1164854605
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164854602}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dbb4baff07232cb4aa08f570982a0293, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1164854606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5104059099188722571, guid: 3b3c9b99a2d10484882fb0cdbe465f75, type: 3}
@@ -2829,6 +2734,10 @@ PrefabInstance:
     - target: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
       propertyPath: _angle
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
+      propertyPath: _zombiAdd
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
       propertyPath: _intervalBeetweenWaves

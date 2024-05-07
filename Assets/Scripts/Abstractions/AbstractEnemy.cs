@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public abstract class AbstractEnemy : MonoBehaviour, IMovable
 {
-    public static Action<float> TakeTowerHp;
 
     protected Animator _animator;
     protected NavMeshAgent _agent;
