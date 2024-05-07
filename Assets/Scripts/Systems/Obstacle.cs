@@ -1,13 +1,17 @@
+using System;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour, IDeadable
 {
+    public static Action playPharase;
+
     [SerializeField] private float _hp = 5f;
     [SerializeField] private ParticleSystem _particleSystem;
 
     public void Dead()
     {
-        Instantiate(_particleSystem, transform.position, Quaternion.identity);
+       playPharase?.Invoke();
+       Instantiate(_particleSystem, transform.position, Quaternion.identity);
        Destroy(gameObject);
     }
 

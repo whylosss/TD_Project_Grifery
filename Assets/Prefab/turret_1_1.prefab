@@ -136,7 +136,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 7050094690292931660}
   _countDown: 0
   _range: 40
-  _fireRate: 1
+  _fireRate: 1.2
   _value: 25
 --- !u!82 &3542905764109033597
 AudioSource:
@@ -150,7 +150,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0ee79c63beb5fe44bb0e014d888228d6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

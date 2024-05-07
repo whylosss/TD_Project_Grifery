@@ -7,7 +7,7 @@ using System;
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavEnemy2 : AbstractEnemy
 {
-    public static Action <float> TakeTowerHp;
+    public static Action<float> TakeTowerHp;
 
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 1f;

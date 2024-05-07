@@ -21,6 +21,7 @@ public class Turret : MonoBehaviour , IShootable
     private void Start()
     { 
         _audioSource = GetComponent<AudioSource>();
+        _audioSource.volume = 0.1f;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 

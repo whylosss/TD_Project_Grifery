@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class Enemy_life : MonoBehaviour, IDeadable
 {
+    public static Action playPhrase;
     public static Action<int> giveMoney;
 
     private Collider _collider;
@@ -32,6 +33,8 @@ public class Enemy_life : MonoBehaviour, IDeadable
         Destroy(_collider);
         Destroy(gameObject, 2f);
         giveMoney?.Invoke(_killCost);
+        playPhrase?.Invoke();
+
     }
 
     public void GetDamage(float amount)
