@@ -232,6 +232,56 @@ MonoBehaviour:
   _movementRange: 150
   _normalSpeed: 20
   _maxSpeed: 50
+--- !u!1 &564180243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564180244}
+  - component: {fileID: 564180245}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &564180244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564180243}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 139.95001, y: 0.124, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 990494271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564180245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564180243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8afd8590da9342b857e52b2cbf39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawPosition: {fileID: 564180244}
+  _spawnAmount: 0
+  _spawnInterval: 2
+  _intervalBeetweenWaves: 5
+  _angle: 180
+  _zombiAdd: 5
 --- !u!4 &990494271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4163533462753069466, guid: bb03b06b2d067d04887c198441585a35, type: 3}
@@ -634,6 +684,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1276706241}
     - target: {fileID: 3167806193474778214, guid: bb03b06b2d067d04887c198441585a35, type: 3}
+      propertyPath: _zombi_spawner
+      value: 
+      objectReference: {fileID: 564180245}
+    - target: {fileID: 3167806193474778214, guid: bb03b06b2d067d04887c198441585a35, type: 3}
       propertyPath: _timeController
       value: 
       objectReference: {fileID: 1276706244}
@@ -699,7 +753,11 @@ PrefabInstance:
     - {fileID: 462610099222298123, guid: bb03b06b2d067d04887c198441585a35, type: 3}
     m_RemovedGameObjects:
     - {fileID: 517325986289927160, guid: bb03b06b2d067d04887c198441585a35, type: 3}
+    - {fileID: 5672173358187741474, guid: bb03b06b2d067d04887c198441585a35, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4163533462753069466, guid: bb03b06b2d067d04887c198441585a35, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 564180244}
     - targetCorrespondingSourceObject: {fileID: 4163533462753069466, guid: bb03b06b2d067d04887c198441585a35, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276706239}

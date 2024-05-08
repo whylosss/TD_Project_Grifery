@@ -410,8 +410,8 @@ PrefabInstance:
     - {fileID: 5025677959529392318, guid: 6e96f743f299de843b51fc3057882412, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6459828522198641959, guid: 6e96f743f299de843b51fc3057882412, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1236425336}
+      insertIndex: 0
+      addedObject: {fileID: 1931329861}
     - targetCorrespondingSourceObject: {fileID: 6459828522198641959, guid: 6e96f743f299de843b51fc3057882412, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1393706265}
@@ -2202,87 +2202,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 884253989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1236425335
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 30523510}
-    m_Modifications:
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -71.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: _zombiAdd
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: _intervalBeetweenWaves
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8348688680554718923, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-      propertyPath: m_Name
-      value: Spawner
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
---- !u!4 &1236425336 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4624568803945695989, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-  m_PrefabInstance: {fileID: 1236425335}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1236425337 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7150905194273527655, guid: 5f3115d56c055f149a4f82fc860b5e8a, type: 3}
-  m_PrefabInstance: {fileID: 1236425335}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa8afd8590da9342b857e52b2cbf39c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1276313260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2676,7 +2595,7 @@ PrefabInstance:
     - target: {fileID: 855600244796430833, guid: 549d50383e06ac94b851d8676f3cd2ec, type: 3}
       propertyPath: _zombi_spawner
       value: 
-      objectReference: {fileID: 1236425337}
+      objectReference: {fileID: 1931329862}
     - target: {fileID: 855600244796430833, guid: 549d50383e06ac94b851d8676f3cd2ec, type: 3}
       propertyPath: _timeController
       value: 
@@ -3100,6 +3019,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d71f397e8b58dcc4aab897a9126c5154, type: 3}
+--- !u!1 &1931329860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931329861}
+  - component: {fileID: 1931329862}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1931329861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931329860}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15, y: 0, z: -71.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 30523510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931329862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931329860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8afd8590da9342b857e52b2cbf39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawPosition: {fileID: 1931329861}
+  _spawnAmount: 0
+  _spawnInterval: 2
+  _intervalBeetweenWaves: 5
+  _angle: 0
+  _zombiAdd: 10
 --- !u!1001 &1937010378
 PrefabInstance:
   m_ObjectHideFlags: 0
