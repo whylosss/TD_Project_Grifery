@@ -31,7 +31,7 @@ public class PhrasesController : MonoBehaviour
 
     private void PlayEnemyPhrases()
     {
-        _index = Random.Range(0, _enemyPrases.Length + 1);
+        _index = Random.Range(0, _enemyPrases.Length);
         _audioSource.PlayOneShot(_enemyPrases[_index]);
     }
 

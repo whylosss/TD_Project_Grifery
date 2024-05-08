@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 5
   _killCost: 5
+  _slider: {fileID: 3273347970752223000}
 --- !u!195 &3342419797186479722
 NavMeshAgent:
   m_ObjectHideFlags: 0

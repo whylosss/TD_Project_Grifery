@@ -4,13 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour
+public class GameUI : MonoBehaviour, IServiceLocator
 {
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject turrelPanel;
     [SerializeField] private GameObject settingsPanel;
     private bool PauseGame;
+
+    public void Init()
+    {
+        gamePanel.SetActive(true);
+        turrelPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        pausePanel.SetActive(false);
+    }
 
     private void Update()
     {

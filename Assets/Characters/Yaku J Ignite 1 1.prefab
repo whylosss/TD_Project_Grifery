@@ -538,6 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 7
   _killCost: 5
+  _slider: {fileID: 2691381605237403249}
 --- !u!114 &1003837203753732524
 MonoBehaviour:
   m_ObjectHideFlags: 0
