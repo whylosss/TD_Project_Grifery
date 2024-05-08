@@ -73,14 +73,6 @@ public class GameUI : MonoBehaviour, IServiceLocator
         settingsPanel.SetActive(true);
     }
 
-    public void BackToPause()
-    {
-        gamePanel.SetActive(false);
-        turrelPanel.SetActive(false);
-        pausePanel.SetActive(true);
-        settingsPanel.SetActive(false);
-    }
-
     public void SetLowSettings()
     {
         QualitySettings.SetQualityLevel(0, true);

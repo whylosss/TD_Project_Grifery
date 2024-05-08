@@ -261,7 +261,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 301368422}
+    m_TransformParent: {fileID: 1279362738}
     m_Modifications:
     - target: {fileID: 17746701393950009, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_Name
@@ -337,11 +337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -304.99997
+      value: -164.99997
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1007,17 +1007,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1863296359}
+  - {fileID: 2112194277}
   - {fileID: 1435235402}
   - {fileID: 2119215761}
   - {fileID: 500614349}
   - {fileID: 835440728}
   - {fileID: 541167128}
   - {fileID: 46843497}
-  - {fileID: 332106037}
-  - {fileID: 53407097}
-  - {fileID: 308100831}
-  - {fileID: 2112194277}
-  - {fileID: 1863296359}
   m_Father: {fileID: 1279362738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1069,7 +1066,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 301368422}
+    m_TransformParent: {fileID: 1279362738}
     m_Modifications:
     - target: {fileID: 17746701393950009, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_Name
@@ -1145,11 +1142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -304.99997
+      value: -164.99997
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2660,6 +2657,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 308100831}
+  - {fileID: 53407097}
+  - {fileID: 332106037}
   - {fileID: 301368422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3098,6 +3098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b31b1a2d96468745b157b180be641fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 301368421}
   panelLevel1: {fileID: 1437687851}
   panelLevel2: {fileID: 53407098}
   panelLevel3: {fileID: 308100832}
@@ -3290,7 +3291,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863296361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1825820059}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: LoadTutor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1863296361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,7 +3727,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 301368422}
+    m_TransformParent: {fileID: 1279362738}
     m_Modifications:
     - target: {fileID: 17746701393950009, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_Name
@@ -3790,11 +3803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -304.99997
+      value: -164.99997
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 433256171348481983, guid: 876f9649d7da787498267a0329964c6c, type: 3}
       propertyPath: m_LocalPosition.x
