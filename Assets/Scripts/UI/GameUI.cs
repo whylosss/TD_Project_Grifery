@@ -12,7 +12,7 @@ public class GameUI : MonoBehaviour, IServiceLocator
     [SerializeField] private GameObject settingsPanel;
     private bool PauseGame;
 
-    public void Init()
+    private void Start()
     {
         gamePanel.SetActive(true);
         turrelPanel.SetActive(true);

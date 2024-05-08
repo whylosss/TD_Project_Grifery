@@ -3,15 +3,20 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class VolumeController : MonoBehaviour, IServiceLocator
+public class VolumeController : MonoBehaviour
 {
     public Slider volumeSlider;
     private AudioSource audioSource;
 
-    public void Init()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        volumeSlider.value = audioSource.volume;
+        volumeSlider.value = 100f;
+    }
+
+    private void Update()
+    {
+        ChangeVolume();
     }
 
     public void ChangeVolume()

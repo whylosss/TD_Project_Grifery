@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class EnteryPoint : MonoBehaviour
 {
-    [SerializeField] private VolumeController _volumeController;
     [SerializeField] private BuildTower _buildTower;
     [SerializeField] private Zombi_spawner _zombi_spawner;
     [SerializeField] private CointSystem _cointSystem;
     [SerializeField] private TimeController _timeController;
-    [SerializeField] private GameUI _gameUI;
 
     private void Awake()
     {
@@ -17,11 +15,9 @@ public class EnteryPoint : MonoBehaviour
 
     private void Init()
     {
-        _volumeController.Init();
         _zombi_spawner.Init();
         _cointSystem.Init();
         _timeController.Init();
-        _gameUI.Init();
         Debug.Log("Initializated");
     }
 
@@ -29,11 +25,9 @@ public class EnteryPoint : MonoBehaviour
     {
         ServiceLocator.Initialize();
 
-        ServiceLocator.Current.Register<VolumeController>(_volumeController);
         ServiceLocator.Current.Register<Zombi_spawner>(_zombi_spawner);
         ServiceLocator.Current.Register<CointSystem>(_cointSystem);
         ServiceLocator.Current.Register<BuildTower>(_buildTower);
-        ServiceLocator.Current.Register<GameUI>(_gameUI);
         Debug.Log("Registreted");
     }
 }
