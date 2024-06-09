@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1829449989842474671, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2205057576807301244, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
       propertyPath: m_Name
       value: GameManager 1
@@ -449,11 +453,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Continue
       objectReference: {fileID: 0}
+    - target: {fileID: 3933162224550373673, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214093177746684636, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550621112990241606, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8520281005734346576, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710548390129551191, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859080626998794078, guid: e313b126805ba114bbce1990bcf8f924, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
